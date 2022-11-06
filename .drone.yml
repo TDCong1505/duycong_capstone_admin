@@ -1,0 +1,158 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: prepare
+    image: busybox
+    commands:
+      - mkdir -p /cache/${DRONE_REPO}/docker
+    volumes:
+      - name: cache
+        path: /cache
+
+  - name: env:staging
+    image: nightfuryest/drone-plugin-secret-to-env
+    settings:
+      template: .deploy/.env.staging.template
+      file: .env
+      envs:
+        - REACT_APP_WEB_ENV
+        - REACT_APP_SITE_URL
+        - REACT_APP_API_URL
+        - REACT_APP_UPLOAD_URL
+        - REACT_APP_API_VERSION
+        - REACT_APP_PLATFORM
+        - PUBLIC_URL
+        - REACT_APP_PREFIX
+        - REACT_APP_GOONG_KEY_API
+        - REACT_APP_GOONG_KEY_MAP
+      REACT_APP_WEB_ENV:
+        from_secret: REACT_APP_WEB_ENV
+      REACT_APP_SITE_URL:
+        from_secret: REACT_APP_SITE_URL
+      REACT_APP_API_URL:
+        from_secret: REACT_APP_API_URL
+      REACT_APP_UPLOAD_URL:
+        from_secret: REACT_APP_UPLOAD_URL
+      REACT_APP_API_VERSION:
+        from_secret: REACT_APP_API_VERSION
+      REACT_APP_PLATFORM:
+        from_secret: REACT_APP_PLATFORM
+      PUBLIC_URL:
+        from_secret: PUBLIC_URL
+      REACT_APP_PREFIX:
+        from_secret: REACT_APP_PREFIX
+      REACT_APP_GOONG_KEY_API:
+        from_secret: REACT_APP_GOONG_KEY_API
+      REACT_APP_GOONG_KEY_MAP:
+        from_secret: REACT_APP_GOONG_KEY_MAP
+    when:
+      branch:
+        - staging-*
+
+  - name: env:release
+    image: nightfuryest/drone-plugin-secret-to-env
+    settings:
+      template: .deploy/.env.release.template
+      file: .env
+      envs:
+        - NODE_ENV
+      NODE_ENV:
+        from_secret: NODE_ENV
+    when:
+      branch:
+        - release/*
+
+  - name: Install Packages
+    image: node:14-alpine
+    commands:
+      - node -v
+      - npm -v
+      - apk add --no-cache git
+      - yarn --version
+      - yarn config set cache-folder /yarn
+      - yarn install --pure-lockfile --production=false
+    volumes:
+      - name: yarn
+        path: /yarn
+
+  - name: build:staging
+    image: plugins/gcr
+    settings:
+      registry: asia-southeast1-docker.pkg.dev
+      repo: asia-southeast1-docker.pkg.dev/fjob-dev/fjob-dev/fjob-manage
+      tags:
+        - latest
+        - ${DRONE_COMMIT}
+      json_key:
+        from_secret: GCR_KEY_DEV
+    volumes:
+      - name: docker
+        path: /var/lib/docker
+      - name: dhost
+        path: /var/run/docker.sock
+    when:
+      branch:
+        - staging-*
+  
+  - name: build:release
+    image: plugins/gcr
+    settings:
+      registry: asia-southeast1-docker.pkg.dev
+      repo: asia-southeast1-docker.pkg.dev/fjob-prod-330208/fjob-registry/fjob-manage
+      tags:
+        - latest
+        - ${DRONE_COMMIT}
+      json_key:
+        from_secret: GCR_KEY
+    volumes:
+      - name: docker
+        path: /var/lib/docker
+      - name: dhost
+        path: /var/run/docker.sock
+    when:
+      branch:
+        - release/*
+
+  - name: deploy:staging
+    image: registry.fjob.com.vn/fjob-k8s:latest
+    settings:
+      secret_key:
+        from_secret: GKE_SECRET_KEY
+      user: drone-fjob-com-vn
+      project_id: fjob-dev
+    commands:
+      - echo $PLUGIN_SECRET_KEY > gsa-key.json
+      - gcloud auth activate-service-account $PLUGIN_USER@$PLUGIN_PROJECT_ID.iam.gserviceaccount.com --key-file=gsa-key.json
+      - gcloud container clusters get-credentials fjob-staging --zone asia-southeast1-a --project fjob-dev
+      - kubectl cluster-info
+      - helm upgrade --install fjob-manage-service /app/charts/common-api-service -n fjob -f /app/services/fjob-manage/values.yaml --set image.repository=asia-southeast1-docker.pkg.dev/fjob-dev/fjob-dev/fjob-manage --set image.tag=${DRONE_COMMIT}
+    when:
+      branch:
+        - staging-*
+
+volumes:
+  - name: cache
+    host:
+      path: /var/cache
+  - name: docker
+    host:
+      path: /var/cache/${DRONE_REPO}/docker
+  - name: dhost
+    host:
+      path: /var/run/docker.sock
+  - name: yarn
+    host:
+      path: /var/cache/${DRONE_REPO}/yarn
+
+trigger:
+  branch:
+    - staging-*
+    - release/*
+  event:
+    exclude:
+      - pull_request
+image_pull_secrets:
+  - dockerconfig

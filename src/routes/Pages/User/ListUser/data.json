@@ -1,0 +1,58 @@
+[
+    {
+        "id": 8,
+        "lastName": "Cong",
+        "firstName": "Ta Duy",
+        "phoneNumber": "0936661875",
+        "address": "2A ngõ 41 Thái Hà , phường Trung Liệt , quận Đống Đa",
+        "city": "HN",
+        "state": "Không",
+        "email": "congtd@devcamp.edu.vn",
+        "postalCode": null,
+        "country": "Việt Nam",
+        "salesRepEmployeeNumber": 0,
+        "creditLimit": 87680000
+    },
+    {
+        "id": 9,
+        "lastName": "Vinh",
+        "firstName": "Phan Thế",
+        "phoneNumber": "0856687566",
+        "address": "Đà Nẵng",
+        "city": "Đà Nẵng",
+        "state": null,
+        "email": "ptvinh@email.com",
+        "postalCode": null,
+        "country": "Việt Nam",
+        "salesRepEmployeeNumber": 0,
+        "creditLimit": 176940000
+    },
+    {
+        "id": 10,
+        "lastName": "Minh",
+        "firstName": "Tri",
+        "phoneNumber": "08566671597",
+        "address": "Hà Nội",
+        "city": "Hà Nội",
+        "state": null,
+        "email": "minhtriduong99@gmail.com",
+        "postalCode": null,
+        "country": "Việt Nam",
+        "salesRepEmployeeNumber": 0,
+        "creditLimit": 68970000
+    },
+    {
+        "id": 11,
+        "lastName": "Anh",
+        "firstName": "Đinh Đức",
+        "phoneNumber": "0907007128",
+        "address": "Văn Giáp , Khánh An , Yên Khánh",
+        "city": "Ninh Bình",
+        "state": "Không",
+        "email": "ddanh@email.com",
+        "postalCode": null,
+        "country": "Việt Nam",
+        "salesRepEmployeeNumber": 0,
+        "creditLimit": 67500000
+    }
+]

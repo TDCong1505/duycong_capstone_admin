@@ -1,0 +1,15 @@
+.container {
+    &_headerPage {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      &_buttonBack {
+        cursor: pointer;
+        border-radius: 99em;
+      }
+    }
+    .form {
+      padding: 30px 0 0 0;
+      text-align: center;
+    }
+  }

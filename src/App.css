@@ -1,0 +1,132 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  height: 44px;
+  border-radius: 8px;
+  align-items: center;
+  font-size: 15px;
+}
+.ant-form-item {
+  margin: 0 0 20px;
+}
+.ant-input {
+  height: 44px;
+  border-radius: 8px;
+}
+.textarea {
+  border-radius: 8px;
+  border: 1px solid #ececec;
+}
+.ant-input-number {
+  height: 44px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+.ant-picker {
+  height: 44px;
+  width: 100%;
+  border-radius: 8px;
+}
+.thead .ant-table-thead {
+  border-radius: 10px;
+}
+.ant-menu-submenu-selected {
+  color: #6e00c2;
+}
+
+.ant-menu-item-selected,
+.ant-menu-item-selected a,
+.ant-menu-item-selected a:hover {
+  color: #6e00c2;
+}
+
+.ant-menu-inline .ant-menu-item:after,
+.ant-menu-vertical-left .ant-menu-item:after,
+.ant-menu-vertical-right .ant-menu-item:after,
+.ant-menu-vertical .ant-menu-item:after {
+  border-right: 3px solid #6e00c2;
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-submenu-title:hover {
+  color: #6e00c2;
+}
+
+.ant-menu .ant-menu-item:hover,
+.ant-menu> .ant-menu-submenu:hover,
+.ant-menu > .ant-menu-item-active,
+.ant-menu> .ant-menu-submenu-active,
+.ant-menu > .ant-menu-item-open,
+/* .ant-menu> .ant-menu-submenu-open, */
+.ant-menu > .ant-menu-submenu-title:hover,
+.ant-menu > .ant-menu-submenu-selected {
+  color: #6e00c2;
+}
+
+span.ant-select-selection-item {
+  display: flex;
+  justify-content: start;
+}
+
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+  width: 44px;
+  height: 44px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.ant-table-thead > tr > th {
+  font-weight: bold;
+}
+
+.ant-form-vertical .ant-form-item-label > label {
+  font-weight: bold;
+}
+
+.ant-tabs-tab:hover{
+  color: #000;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+  color: #000;
+  font-weight: bold;
+  text-shadow: none;
+}
+.ant-tabs-tab{
+  font-size: 18px;
+}
+
+.ant-select-selection-item>div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ant-form-item-control-input{
+  min-height: 0px
+}
+
+span.ant-input-affix-wrapper.ant-input-password {
+    height: 44px;
+    border-radius: 8px;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+}
+
+input#password{
+     height: 36px;
+}
+input#basic_password{
+  height: 36px;
+}
+input#basic_passwordConfirm{
+  height: 36px;
+}
+input#passwordConfirm{
+    height: 36px;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  height: 44px;
+  border-radius: 8px;
+}

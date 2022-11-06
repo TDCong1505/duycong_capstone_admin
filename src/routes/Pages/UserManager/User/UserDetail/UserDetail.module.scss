@@ -1,0 +1,135 @@
+.container {
+  &_headerPage {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &_buttonBack {
+      cursor: pointer;
+      border-radius: 99em;
+    }
+  }
+  .contentContainer {
+    .infoUser {
+      padding: 20px;
+      // height: 232px;
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #ececec;
+      display: flex;
+      &_avatar {
+        width: 100px;
+        &_img {
+          width: 100px;
+
+          border-radius: 99em;
+          // border: 1px solid #ececec;
+        }
+        &_id {
+          font-size: 16px;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          margin-top: 15px;
+        }
+      }
+      &_content {
+        margin-left: 40px;
+        width: 100%;
+        &_userName {
+          display: flex;
+          &_name {
+            font-size: 18px;
+            font-weight: bold;
+          }
+          &_verify {
+            color: #06983c;
+            font-size: 14px;
+            margin-left: 18px;
+          }
+        }
+        .hrCard {
+          margin: 9px 0;
+          opacity: 30%;
+        }
+        &_item {
+          font-size: 16px;
+          display: flex;
+          margin-bottom: 7px;
+          &_value {
+            color: #6e00c2;
+          }
+        }
+        &_button {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          &_item {
+            width: 142px;
+            height: 36px;
+            background-color: #fff;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #ececec;
+            margin-bottom: 5px;
+          }
+          
+        }
+      }
+    }
+    .wageContainer {
+      height: 98px;
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #ececec;
+      margin-top: 20px;
+      padding: 20px;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &_title {
+        font-weight: bold;
+      }
+    }
+    .stackUser {
+      // height: 200px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #ececec;
+      margin-top: 20px;
+      &_expEdu {
+        display: flex;
+        justify-content: space-between;
+        &_item {
+          width: 48%;
+          &_title {
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &_NoItem{
+            font-size: 16px;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    .companyContainer {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #ececec;
+      margin-top: 20px;
+    }
+  }
+}
+.actionEffect {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    // background-color: red;
+  }
+}
