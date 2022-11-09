@@ -54,7 +54,8 @@ export const servicePaths = {
   getAllOrder: '/orders',
   getOrderByCustomerId: '/orders/customerId/',
   getByTime: '/orders/rangeTime/',
-  
+  orderExportExcel : '/orders/export/excel', 
+
   //orderdetails 
   createOrderDetail: '/orderdetails/productCode/',
   getByOrderId: '/orderdetails/orderId/',

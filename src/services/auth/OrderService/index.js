@@ -10,6 +10,7 @@ const OrderService = {
     getAll: params => ApiService().get(servicePaths.getAllOrder),
     getByCustomerId: params => ApiService().get(servicePaths.getOrderByCustomerId + params),
     getByTime: (begin,end) => ApiService().get(servicePaths.getByTime + begin + "/" + end),
+    exportExcel:  params => ApiService().get(servicePaths.orderExportExcel),
 
 }
 

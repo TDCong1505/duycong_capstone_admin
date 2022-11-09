@@ -6,7 +6,7 @@ import styles from '../../Product/New/New.module.scss';
 import PageContainer from '@jumbo/components/PageComponents/layouts/PageContainer';
 import ButtonGoBack from 'routes/Pages/components/Button/ButtonGoBack';
 import { Box, Paper } from '@material-ui/core';
-import { Row } from 'antd';
+import { Button, Row } from 'antd';
 import OrderService from 'services/auth/OrderService';
 import { DatePicker, Space } from 'antd';
 import { Bar } from 'react-chartjs-2';
@@ -46,6 +46,8 @@ export const options = {
 export default function OrderBarChart() {
   const classes = useStyles();
   const [ orders , setOrders ] = useState([]);
+  const [beginDate,setBeginDate] =  useState("");
+  const [endDate,setEndDate] = useState("");
   const loadOrders = async () => {
     let res = await OrderService.getAll();
     setOrders(res.data);
@@ -92,11 +94,21 @@ export default function OrderBarChart() {
       },
     ],
   };
+
   const handleChangeDate = async (dates, dateStrings) => {
     let res = await OrderService.getByTime(dateStrings[0],dateStrings[1]);
     setOrders(res.data);
-    console.log(res.data);
+    console.log(res.data)
   }
+  
+  const handleExportExcel = async () => {
+    try {
+      let res = await OrderService.exportExcel();
+    } catch (err){
+      console.log(err);
+    }
+  }
+
   return (
     <PageContainer heading={<IntlMessages id={heading} />} className={styles.container}>
       <div className={styles.container_headerPage}>
@@ -107,6 +119,7 @@ export default function OrderBarChart() {
           <div className={styles.contentArea}>
             <div className={styles.title}>THỐNG KÊ ĐƠN HÀNG</div>
             <RangePicker onChange={handleChangeDate} style={{width:'30%'}}/>
+            <Button onClick={handleExportExcel}>Xuất file Excel thống kê đơn hàng</Button>
             <Row justify="space-between">
             <Bar options={options} data={data} />
             </Row>
