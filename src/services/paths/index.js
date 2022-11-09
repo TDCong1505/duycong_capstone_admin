@@ -33,7 +33,7 @@ export const servicePaths = {
   //product type
   getAllProductType:'/producttypes',
   getProductTypePageable: '/producttypes/pageable/',
-  createProductType:'/producttypes/productTypeId/',
+  createProductType:'/producttypes',
   getProductTypeDetail: '/producttypes/productTypeCode/',
   updateProductType:'/producttypes/productTypeCode/',
   deleteProductType: '/producttypes/productTypeCode/',

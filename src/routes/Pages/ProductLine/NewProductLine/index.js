@@ -32,6 +32,7 @@ export default function New() {
                 productLineName:values.productLineName,
                 productLineCode:values.productLineCode,
                 description:values.description,
+                photoURL:values.photoURL,
             })
             message.loading({content: 'Loading ...'})
             await setTimeout(() => {
@@ -81,6 +82,11 @@ export default function New() {
                             </CardInput>
                             <CardInput title="Mô tả hãng sản phẩm" width={widthCardInput}>
                                 <Form.Item name="description" rules={[{required: true,message: 'Mô tả hãng sản phẩm không được trống!'}]}>
+                                    <Input type="text" />
+                                </Form.Item>
+                            </CardInput>
+                            <CardInput title="Ảnh đại diện cho hãng" width={widthCardInput}>
+                                <Form.Item name="photoURL" rules={[{required: true,message: 'Ảnh đại diện cho hãng không được trống!'}]}>
                                     <Input type="text" />
                                 </Form.Item>
                             </CardInput>
