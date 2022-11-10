@@ -106,7 +106,7 @@ export default function ListAccount() {
       key: item.code,
       id: <JobDetailCpn children={item.id} />,
       userName: <JobDetailCpn children={item.username} />,
-      employee: <JobDetailCpn children={item.employee.firstName + " " + item.employee.lastName} />,
+      employee: <JobDetailCpn children={item?.employee?.firstName + " " + item?.employee?.lastName} />,
       createdBy: <JobDetailCpn children={item.createdBy} />,
       updatedBy: <JobDetailCpn children={item.updatedBy} />,
       roles: <JobDetailCpn children={item.roles[0].roleKey} />,

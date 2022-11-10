@@ -28,5 +28,6 @@
   "sidebar.deletePhoto":"Xoá hình ảnh của sản phẩm",
   "sidebar.newDesc":"Thêm mới thông số kỹ thuật cho sản phẩm",
   "sidebar.descDetail":"Xem thông số kỹ thuật của sản phẩm",
-  "sidebar.editDesc":"Chỉnh sửa thông số kỹ thuật"
+  "sidebar.editDesc":"Chỉnh sửa thông số kỹ thuật",
+  "sidebar.listOrderDetails":"Danh sách đơn hàng chi tiết"
 }

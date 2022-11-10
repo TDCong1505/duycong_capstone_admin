@@ -149,17 +149,6 @@ const VerticalDefault = ({ children }) => {
         }
       ]
     },
-    {
-      key:'userManage',
-      icon:React.createElement(SolutionOutlined),
-      label: 'Quản lý khách hàng',
-      children: [ 
-        {
-          key:'user',
-          label:"Danh sách khách hàng",
-        }
-      ]
-    }
   ];
   const history = useHistory();
   const username = localStorage.getItem("username");
