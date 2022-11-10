@@ -16,12 +16,7 @@ import ProductDesService from '../../../../services/auth/ProductDesService';
 import ProductPhotoService from 'services/auth/ProductPhotoService';
 import VoteService from 'services/VoteService';
 
-const breadcrumbs = [
-  { label: <IntlMessages id={'sidebar.dashBoard'} />, link: '/' },
-  { label: <IntlMessages id={'sidebar.listUser'} />, isActive: true },
-  { label: <IntlMessages id={'sidebar.createBlog'} />, isActive: true },
-];
-const heading = 'Xem thông tin sản phẩm';
+const heading = 'sidebar.productDetail';
 
 export default function ProductDetail() {
 
@@ -65,7 +60,7 @@ export default function ProductDetail() {
   const widthCardInput = '30%';
   let count = 0;
   return (
-    <PageContainer heading={<IntlMessages id={heading} />} breadcrumbs={breadcrumbs} className={styles.container}>
+    <PageContainer heading={<IntlMessages id={heading} />} className={styles.container}>
       <div className={styles.container_headerPage}>
         <ButtonGoBack />
       </div>

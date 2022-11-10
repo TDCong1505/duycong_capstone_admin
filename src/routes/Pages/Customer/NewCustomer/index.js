@@ -15,7 +15,7 @@ import { useParams } from 'react-router';
 import ProductLineService from 'services/auth/ProductLineService';
 import CustomerService from 'services/auth/CustomerService';
 
-const heading = 'Tạo mới thông tin khách hàng';
+const heading = 'sidebar.newCustomer';
 
 export default function New() {
 

@@ -11,7 +11,7 @@ const PageContainer = ({ heading, breadcrumbs, children, className, restProps })
     <Slide in={true} direction="up" mountOnEnter unmountOnExit>
       <Box className={className} {...restProps}>
         {(heading || breadcrumbs) && (
-          <PageHeader heading={heading}/>
+          <PageHeader heading={heading} />
         )}
         {children}
       </Box>

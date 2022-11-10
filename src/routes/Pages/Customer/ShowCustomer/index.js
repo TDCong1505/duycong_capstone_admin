@@ -15,7 +15,7 @@ import { useParams } from 'react-router';
 import CustomerService from 'services/auth/CustomerService';
 import OrderService from 'services/auth/OrderService';
 
-const heading = 'Xem thông tin khách hàng';
+const heading = 'sidebar.customerDetail';
 export default function New() {
   const { id } = useParams();
   const [data, setData] = useState({});

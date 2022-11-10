@@ -13,7 +13,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import ProductTypeService from 'services/auth/ProductTypeService';
 import { Input, message, Row } from 'antd';
 
-const heading = 'Thêm loại sản phẩm mới';
+const heading = 'sidebar.newProductType';
 
 export default function New() {
 

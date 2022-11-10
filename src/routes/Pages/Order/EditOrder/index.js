@@ -15,7 +15,7 @@ import { useParams } from 'react-router';
 import ProductLineService from 'services/auth/ProductLineService';
 import OrderService from 'services/auth/OrderService';
 
-const heading = 'Cập nhật đơn hàng';
+const heading = 'sidebar.editOrder';
 
 export default function EditOrder() {
 

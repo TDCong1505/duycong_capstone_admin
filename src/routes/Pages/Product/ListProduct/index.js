@@ -15,7 +15,7 @@ const breadcrumbs = [
   { label: <IntlMessages id={'Danh sách sản phẩm'} />, isActive: true },
 ];
 
-const heading = 'Danh sách sản phẩm';
+const heading = 'sidebar.listProducts';
 const columns = [
   {
     title: '',

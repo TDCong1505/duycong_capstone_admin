@@ -12,7 +12,7 @@ import { Input, message, Row } from 'antd';
 import { useParams } from 'react-router';
 import ButtonSubmit from 'routes/Pages/components/Button/ButtonSubmit';
 
-const heading = 'Xoá thông tin loại sản phẩm';
+const heading = 'sidebar.deleteProductType';
 export default function DeleteProductType() {
   const { code } = useParams();
   const [item, setItem] = useState({});

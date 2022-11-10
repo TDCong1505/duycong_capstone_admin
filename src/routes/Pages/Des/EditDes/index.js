@@ -15,12 +15,7 @@ import { DatePicker, Input, message, Row, Select } from 'antd';
 import { useParams } from 'react-router';
 import ProductDesService from 'services/auth/ProductDesService';
 
-const breadcrumbs = [
-  { label: <IntlMessages id={'sidebar.dashBoard'} />, link: '/' },
-  { label: <IntlMessages id={'sidebar.listUser'} />, isActive: true },
-  { label: <IntlMessages id={'sidebar.createBlog'} />, isActive: true },
-];
-const heading = 'Chỉnh sửa loại sản phẩm';
+const heading = 'sidebar.editDesc';
 
 export default function New() {
   const { id } = useParams();
@@ -91,7 +86,7 @@ export default function New() {
   const widthCardInput = '30%';
   const [open, setOpen] = React.useState(false);
   return (
-    <PageContainer heading={<IntlMessages id={heading} />} breadcrumbs={breadcrumbs} className={styles.container}>
+    <PageContainer heading={<IntlMessages id={heading} />} className={styles.container}>
       <div className={styles.container_headerPage}>
         <ButtonGoBack />
       </div>

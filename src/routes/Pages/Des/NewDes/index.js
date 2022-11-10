@@ -17,12 +17,7 @@ import ProductDesService from 'services/auth/ProductDesService';
 import ProductService from 'services/auth/ProductService';
 
 const { Option } = Select;
-const breadcrumbs = [
-  { label: <IntlMessages id={'sidebar.dashBoard'} />, link: '/' },
-  { label: <IntlMessages id={'sidebar.listUser'} />, isActive: true },
-  { label: <IntlMessages id={'sidebar.createBlog'} />, isActive: true },
-];
-const heading = 'Thêm mới thông số sản phẩm';
+const heading = 'sidebar.newDesc';
 
 export default function New() {
   const [product, setProduct] = useState([]);
@@ -72,7 +67,7 @@ export default function New() {
   const widthCardInput = '30%';
   const [open, setOpen] = React.useState(false);
   return (
-    <PageContainer heading={<IntlMessages id={heading} />} breadcrumbs={breadcrumbs} className={styles.container}>
+    <PageContainer heading={<IntlMessages id={heading} />} className={styles.container}>
       <div className={styles.container_headerPage}>
         <ButtonGoBack />
       </div>

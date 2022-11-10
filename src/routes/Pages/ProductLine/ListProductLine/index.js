@@ -10,12 +10,7 @@ import { Paper } from '@material-ui/core';
 import { rootPath } from 'helpers/buildUrl';
 import ProductLineService from 'services/auth/ProductLineService';
 
-const breadcrumbs = [
-  { label: <IntlMessages id={'sidebar.dashBoard'} />, link: '/' },
-  { label: <IntlMessages id={'Danh sách sản phẩm'} />, isActive: true },
-];
-
-const heading = 'Danh sách hãng sản phẩm';
+const heading = 'sidebar.listProductLines';
 
 
 const columns = [
@@ -120,7 +115,6 @@ export default function ListProductType() {
     <TableLayout
       handleCallBack={handleCallBack}
       heading={heading}
-      breadcrumbs={breadcrumbs}
       currentPage={currentPage}
       rows={rows}
       total={total}

@@ -12,14 +12,7 @@ import ProductService from 'services/auth/ProductService';
 import ProductPhotoService from 'services/auth/ProductPhotoService';
 import ProductDesService from 'services/auth/ProductDesService';
 
-const breadcrumbs = [
-  { label: <IntlMessages id={'sidebar.dashBoard'} />, link: '/' },
-  { label: <IntlMessages id={'Danh sách sản phẩm'} />, isActive: true },
-];
-
-const heading = 'Danh sách thông số kỹ thuật sản phẩm';
-
-
+const heading = 'sidebar.descDetail';
 const columns = [
   {
     title: '',
@@ -184,7 +177,6 @@ export default function ListPhoto() {
     <TableLayout
       handleCallBack={handleCallBack}
       heading={heading}
-      breadcrumbs={breadcrumbs}
       currentPage={currentPage}
       rows={rows}
       total={total}

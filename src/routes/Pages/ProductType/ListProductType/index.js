@@ -9,7 +9,7 @@ import { Paper } from '@material-ui/core';
 import { rootPath } from 'helpers/buildUrl';
 import ProductTypeService from 'services/auth/ProductTypeService';
 
-const heading = 'Danh sách loại sản phẩm';
+const heading = 'sidebar.listProductTypes';
 const columns = [
   {
     title: '',

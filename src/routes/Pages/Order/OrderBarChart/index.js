@@ -10,6 +10,7 @@ import { Button, Row } from 'antd';
 import OrderService from 'services/auth/OrderService';
 import { DatePicker, Space } from 'antd';
 import { Bar } from 'react-chartjs-2';
+import { baseURL } from 'services/ConfigService/APIService';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -97,13 +98,15 @@ export default function OrderBarChart() {
 
   const handleChangeDate = async (dates, dateStrings) => {
     let res = await OrderService.getByTime(dateStrings[0],dateStrings[1]);
+    setBeginDate(dateStrings[0]);
+    setEndDate(dateStrings[1]);
     setOrders(res.data);
-    console.log(res.data)
+    console.log(res.data);
   }
   
   const handleExportExcel = async () => {
     try {
-      let res = await OrderService.exportExcel();
+      window.location = `${baseURL}orders/export/excel/${beginDate}/${endDate}`;
     } catch (err){
       console.log(err);
     }

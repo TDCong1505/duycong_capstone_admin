@@ -12,10 +12,9 @@ import CardInput from 'routes/Pages/UserManager/User/Component/CardInput/CardInp
 import Backdrop from '@material-ui/core/Backdrop';
 import { DatePicker, Input, message, Row, Select } from 'antd';
 import { useParams } from 'react-router';
-import ProductLineService from 'services/auth/ProductLineService';
 import CustomerService from 'services/auth/CustomerService';
 
-const heading = 'Chỉnh sửa thông tin khách hàng';
+const heading = 'sidebar.editCustomer';
 
 export default function New() {
 

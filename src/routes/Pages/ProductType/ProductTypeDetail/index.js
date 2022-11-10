@@ -11,7 +11,7 @@ import ProductTypeService from 'services/auth/ProductTypeService';
 import { Input , Row } from 'antd';
 import { useParams } from 'react-router';
 
-const heading = 'Xem thông tin loại sản phẩm';
+const heading = 'sidebar.productTypeDetail';
 export default function ProductTypeDetail() {
   const { code } = useParams();
   const [item, setItem] = useState({});

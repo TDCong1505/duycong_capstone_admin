@@ -20,7 +20,7 @@ import ProductService from 'services/auth/ProductService';
 import OrderService from 'services/auth/OrderService';
 import OrderDetailService from 'services/auth/OrderDetailService';
 
-const heading = 'Thêm đơn hàng mới';
+const heading = 'sidebar.newOrder';
 const { Option } = Select;
 export default function New() {
   const [form] = Form.useForm();

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { CONFIGURATION } from 'Configuration';
 import jwtDecode from 'jwt-decode';
 
+export const baseURL = 'https://chilling-crypt-20162.herokuapp.com/api/v1/';
 const ApiService = (configuration = {}) => {
     const tokenUser = localStorage.getItem('token');
     const expireTime = localStorage.getItem('fjob_admin_expireTime') ? parseInt(localStorage.getItem('fjob_admin_expireTime')) : 0;
@@ -36,7 +37,7 @@ const ApiService = (configuration = {}) => {
     if (expireTime < getTimestampCurrent / 1000) {
         onLogoutClick()
     }
-    let baseURL = 'https://chilling-crypt-20162.herokuapp.com/api/v1/'
+    
     let headers = {
         'Content-Type': 'application/json',
     };    
@@ -74,5 +75,4 @@ const ApiService = (configuration = {}) => {
 
     return axiosInstance;
 };
-
 export default ApiService;

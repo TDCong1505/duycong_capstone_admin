@@ -14,7 +14,7 @@ import ProductTypeService from 'services/auth/ProductTypeService';
 import { DatePicker, Input, message, Row, Select } from 'antd';
 import ProductLineService from 'services/auth/ProductLineService';
 
-const heading = 'Thêm hãng sản phẩm mới';
+const heading = 'sidebar.newProductLine';
 const { Option } = Select;
 export default function New() {
 

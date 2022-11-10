@@ -14,7 +14,7 @@ import OrderService from 'services/auth/OrderService';
 import OrderDetailService from 'services/auth/OrderDetailService';
 import CustomerService from 'services/auth/CustomerService';
 
-const heading = 'Xem thông tin đơn hàng';
+const heading = 'sidebar.orderDetail';
 
 export default function ProductTypeDetail() {
 

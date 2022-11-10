@@ -11,7 +11,7 @@ import { rootPath } from 'helpers/buildUrl';
 import ProductPhotoService from 'services/auth/ProductPhotoService';
 
 
-const heading = 'Danh sách ảnh sản phẩm';
+const heading = 'sidebar.listPhotos';
 const columns = [
   {
     title: '',

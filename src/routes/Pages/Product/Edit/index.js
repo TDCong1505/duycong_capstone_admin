@@ -16,12 +16,7 @@ import ProductDesService from '../../../../services/auth/ProductDesService';
 import ProductPhotoService from 'services/auth/ProductPhotoService';
 import ButtonSubmit from 'routes/Pages/components/Button/ButtonSubmit';
 
-const breadcrumbs = [
-  { label: <IntlMessages id={'sidebar.dashBoard'} />, link: '/' },
-  { label: <IntlMessages id={'sidebar.listUser'} />, isActive: true },
-  { label: <IntlMessages id={'sidebar.createBlog'} />, isActive: true },
-];
-const heading = 'Sửa thông tin sản phẩm';
+const heading = 'sidebar.editProduct';
 
 export default function EditProduct() {
   const [form] = Form.useForm();
@@ -118,7 +113,7 @@ export default function EditProduct() {
     }
   };
   return (
-    <PageContainer heading={<IntlMessages id={heading} />} breadcrumbs={breadcrumbs} className={styles.container}>
+    <PageContainer heading={<IntlMessages id={heading} />} className={styles.container}>
       <div className={styles.container_headerPage}>
         <ButtonGoBack />
       </div>

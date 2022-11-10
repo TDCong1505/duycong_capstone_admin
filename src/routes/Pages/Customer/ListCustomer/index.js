@@ -10,7 +10,7 @@ import { Paper } from '@material-ui/core';
 import { rootPath } from 'helpers/buildUrl';
 import CustomerService from 'services/auth/CustomerService';
 
-const heading = 'Danh sách khách hàng';
+const heading = 'sidebar.listCustomers';
 const columns = [
   {
     title: '',

@@ -9,7 +9,7 @@ import { Paper } from '@material-ui/core';
 import { rootPath } from 'helpers/buildUrl';
 import OrderDetailService from 'services/auth/OrderDetailService';
 
-const heading = 'Danh sách đơn hàng chi tiết';
+const heading = 'sidebar.listOrderDetails';
 const columns = [
   {
     title: '',

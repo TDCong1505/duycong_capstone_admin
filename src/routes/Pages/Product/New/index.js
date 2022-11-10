@@ -15,12 +15,7 @@ import ProductService from 'services/auth/ProductService';
 import { DatePicker, Input, message, Row, Select } from 'antd';
 
 const { Option } = Select
-const breadcrumbs = [
-    { label: <IntlMessages id={'sidebar.dashBoard'} />, link: '/' },
-    { label: <IntlMessages id={'sidebar.listUser'} />, isActive: true },
-    { label: <IntlMessages id={'sidebar.createBlog'} />, isActive: true },
-];
-const heading = 'Thêm sản phẩm mới';
+const heading = 'sidebar.newProduct';
 
 export default function New() {
     const [ data , setData ] = useState([]);
@@ -58,7 +53,7 @@ export default function New() {
 
     const widthCardInput = "31%"
     const [open, setOpen] = React.useState(false);
-    return <PageContainer heading={<IntlMessages id={heading} />} breadcrumbs={breadcrumbs} className={styles.container}>
+    return <PageContainer heading={<IntlMessages id={heading} />} className={styles.container}>
         <div className={styles.container_headerPage}>
             <ButtonGoBack />
         </div>

@@ -14,7 +14,7 @@ import { DatePicker, Input, message, Row, Select } from 'antd';
 import { useParams } from 'react-router';
 import ProductLineService from 'services/auth/ProductLineService';
 
-const heading = 'Chỉnh sửa hãng sản phẩm';
+const heading = 'sidebar.editProductLine';
 
 export default function New() {
 

@@ -11,7 +11,7 @@ import { rootPath } from 'helpers/buildUrl';
 import OrderService from 'services/auth/OrderService';
 
 
-const heading = 'Danh sách đơn hàng';
+const heading = 'sidebar.listOrders';
 
 
 const columns = [

@@ -15,7 +15,7 @@ import { useParams } from 'react-router';
 import ProductLineService from 'services/auth/ProductLineService';
 import ProductDesService from 'services/auth/ProductDesService';
 
-const heading = 'Xem thông số sản phẩm';
+const heading = 'sidebar.descDetail';
 
 export default function ProductTypeDetail() {
 
